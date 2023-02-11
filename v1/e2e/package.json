@@ -1,0 +1,15 @@
+{
+  "name": "e2e",
+  "version": "1.0.0",
+  "description": "imtdb e2e tests",
+  "scripts": {
+    "test": "cypress open"
+  },
+  "keywords": [
+    "cypress"
+  ],
+  "author": "JJ-Kamminga",
+  "dependencies": {
+    "cypress": "^12.5.1"
+  }
+}
