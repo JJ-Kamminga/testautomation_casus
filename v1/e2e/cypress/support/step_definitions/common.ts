@@ -16,8 +16,27 @@ Then('I see a button with the text {string}', (text: string) => {
     .should('be.visible')
 })
 
+Then('I click the button with the text {string}', (text: string) => {
+  cy.get('button')
+    .contains(text)
+    .should('be.visible')
+    .click()
+})
+
 Then('I see a link with the text {string}', (text: string) => {
   cy.get('a')
     .contains(text)
     .should('be.visible')
+})
+
+Then('I click the link with the text {string}', (text: string) => {
+  cy.get('a')
+    .contains(text)
+    .should('be.visible')
+    .click()
+})
+
+Then('I see {string} in the url', (text: string) => {
+  cy.url()
+    .should('contain', text)
 })
