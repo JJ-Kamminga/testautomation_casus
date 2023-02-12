@@ -24,3 +24,8 @@ Feature: login
     And I click the link with the text "Profile"
     Then I see the text "Profile settings of"
     And I see my username
+
+  Scenario: restricted features
+    Then I do not see the text "Profile"
+    And I click the button with the text "List all movies"
+    Then I do not see the text "more..."
