@@ -14,7 +14,7 @@ Feature: login
     Then I see the text "Username"
     And I see the text "Password"
 
-  Scenario: valid credentials
+  Scenario: valid credentials and logout
     When I click the link with the text "Login"
     Then I see the text "Username"
     And I see the text "Password"
@@ -24,6 +24,11 @@ Feature: login
     And I click the link with the text "Profile"
     Then I see the text "Profile settings of"
     And I see my username
+    
+    And I click the link with the text "Logout"
+    Then I see the text "Sign Up"
+    And I see the text "Login"
+    And I see the text "Coming soon"
 
   Scenario: restricted features
     Then I do not see the text "Profile"
