@@ -4,6 +4,11 @@ When('I visit the homepage', () => {
   cy.visit('/')
 })
 
+When('I am on the homepage', () => {
+  cy.url()
+    .should('match', new RegExp(`${Cypress.config().baseUrl}`))
+})
+
 When('I am logged in', () => {
   /** Possible improvement: */
   // cy.session('user', () => {
