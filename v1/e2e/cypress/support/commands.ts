@@ -25,28 +25,28 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('login', (
-    username = Cypress.env('username'),
-    password = Cypress.env('password')
+  username = Cypress.env('username'),
+  password = Cypress.env('password')
 ) => {
-    cy.intercept({
-        method: 'POST',
-        url: '*/proxy/tokens'
-    }).as('Token')
+  cy.intercept({
+    method: 'POST',
+    url: '*/proxy/tokens'
+  }).as('Token')
 
-    cy.visit('/')
+  cy.visit('/')
 
-    cy.get('a')
-        .contains('Login')
-        .click()
-    cy.get('input[id="username"]')
-        .type(username)
-    cy.get('input[type="password"]')
-        .type(password)
-    cy.get('button')
-        .contains('Submit')
-        .click()
+  cy.get('a')
+    .contains('Login')
+    .click()
+  cy.get('input[id="username"]')
+    .type(username)
+  cy.get('input[type="password"]')
+    .type(password)
+  cy.get('button')
+    .contains('Submit')
+    .click()
 
-    cy.wait('@Token')
-        .its('response.statusCode')
-        .should('eq', 200)
+  cy.wait('@Token')
+    .its('response.statusCode')
+    .should('eq', 200)
 })
