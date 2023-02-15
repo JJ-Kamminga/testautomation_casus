@@ -1,4 +1,4 @@
-import { Then, When } from "@badeball/cypress-cucumber-preprocessor";
+import { Then, When } from '@badeball/cypress-cucumber-preprocessor'
 
 When('I enter invalid credentials', () => {
     cy.get('input[id="username"]')

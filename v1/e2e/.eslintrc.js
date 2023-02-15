@@ -10,16 +10,22 @@ module.exports = {
   overrides: [
     {
       files: ['.ts'],
-      parserOptions: {
-        project: '**/tsconfig.json'
-      },
       rules: {
-        quotes: ['error', 'single']
+        indent: ['warn', 4],
+        'space-before-function-paren': 'off',
+        '@typescript-eslint/indent': 'off'
       }
     }
   ],
   parserOptions: {
+    project: '**/tsconfig.json',
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
+    rules: {
+      indent: ['warn', 4],
+      'space-before-function-paren': 'off',
+      '@typescript-eslint/space-before-function-paren': 'off',
+      '@typescript-eslint/indent': 'off'
+    }
   }
 }

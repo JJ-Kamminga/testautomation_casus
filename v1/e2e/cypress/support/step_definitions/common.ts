@@ -6,13 +6,13 @@ When('I visit the homepage', () => {
 
 When('I am on the homepage', () => {
   cy.url()
-    .should('match', new RegExp(`${Cypress.config().baseUrl}`))
+    .should('match', new RegExp(`${Cypress.config().baseUrl ?? '/'}`))
 })
 
 When('I am logged in', () => {
   /** Possible improvement: */
   // cy.session('user', () => {
-  cy.login();
+  cy.login()
   // })
 })
 
@@ -27,7 +27,6 @@ Then('I do not see the text {string}', (text: string) => {
     .contains(text)
     .should('not.exist')
 })
-
 
 Then('I see a button with the text {string}', (text: string) => {
   cy.get('button')
@@ -67,7 +66,7 @@ Then('I see {string} in the url', (text: string) => {
 })
 
 Then('I see an input field with placeholder text {string}', (text: string) => {
-  cy.get(`input`)
+  cy.get('input')
     .should('have.attr', 'placeholder', text)
 })
 
