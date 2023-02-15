@@ -23,6 +23,13 @@ Then('I do not see the text {string}', (text: string) => {
     .should('not.exist')
 })
 
+
+Then('I see a button with the text {string}', (text: string) => {
+  cy.get('button')
+    .contains(text)
+    .should('be.visible')
+})
+
 Then('I do not see a button with the text {string}', (text: string) => {
   cy.get('button')
     .contains(text)

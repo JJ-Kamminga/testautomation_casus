@@ -4,7 +4,10 @@
   "description": "imtdb e2e tests",
   "main": "./cypress/e2e.js",
   "scripts": {
-    "test": "cypress open",
+    "cypress": "cypress run --config viewportWidth=375,viewportHeight=667",
+    "cypress:mobile": "cypress run --config viewportWidth=1920,viewportHeight=1080",
+    "cypress-open": "cypress open --config viewportWidth=1920,viewportHeight=1080",
+    "cypress-open:mobile": "cypress open --config viewportWidth=360,viewportHeight=640",
     "lint": "eslint",
     "lint:fix": "eslint --fix"
   },
