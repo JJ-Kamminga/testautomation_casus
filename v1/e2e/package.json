@@ -1,0 +1,32 @@
+{
+  "name": "e2e",
+  "version": "1.0.0",
+  "description": "imtdb e2e tests",
+  "main": "./cypress/e2e.js",
+  "scripts": {
+    "cypress": "cypress run --config viewportWidth=375,viewportHeight=667",
+    "cypress:mobile": "cypress run --config viewportWidth=1920,viewportHeight=1080",
+    "cypress-open": "cypress open --config viewportWidth=1920,viewportHeight=1080",
+    "cypress-open:mobile": "cypress open --config viewportWidth=360,viewportHeight=640",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
+  },
+  "keywords": [
+    "cypress"
+  ],
+  "author": "JJ-Kamminga",
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.3",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+    "cypress": "^12.5.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "eslint": "^8.34.0",
+    "eslint-config-standard-with-typescript": "^34.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "typescript": "^4.9.5"
+  }
+}
